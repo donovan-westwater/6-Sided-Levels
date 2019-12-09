@@ -21,7 +21,7 @@ public class Wall : MonoBehaviour
         Vector3 dir = main.transform.position - this.transform.position;
         //Experimental (new code, may not work)
         RaycastHit ray;
-        bool checkhit = Physics.Raycast(main.transform.position, -dir, out ray,100f, Physics.DefaultRaycastLayers);
+        bool checkhit = Physics.Raycast(main.transform.position, -(main.transform.position - Player.transform.position), out ray,100f, Physics.DefaultRaycastLayers);
         float zlayer = ray.point.z;
         if (!checkhit) zlayer = 0.5f;
         //End of new code
