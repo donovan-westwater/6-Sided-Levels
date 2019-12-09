@@ -19,8 +19,14 @@ public class Wall : MonoBehaviour
     {
         bool noHit = true;
         Vector3 dir = main.transform.position - this.transform.position;
+        //Experimental (new code, may not work)
+        RaycastHit ray;
+        bool checkhit = Physics.Raycast(main.transform.position, -dir, out ray,100f, Physics.DefaultRaycastLayers);
+        float zlayer = ray.point.z;
+        if (!checkhit) zlayer = 0.5f;
+        //End of new code
         RaycastHit2D[] rays;
-        rays = Physics2D.RaycastAll(main.transform.position, -dir, 100f, Physics2D.DefaultRaycastLayers, -11, 0.5f);
+        rays = Physics2D.RaycastAll(main.transform.position, -dir, 100f, Physics2D.DefaultRaycastLayers, -11, zlayer); //Orignally 0.5f
         Debug.DrawLine(main.transform.position, main.transform.position - dir);
         foreach (RaycastHit2D r in rays){
             if (r.collider.gameObject.tag.Equals("Level"))
