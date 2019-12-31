@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4212023072196517477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fb629cc20a578e42b5827ac9743a62e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b8267ba9e09f8444b04acd765a817a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wall: {fileID: 0}
 --- !u!1001 &8026245387330966427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20,21 +19,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
-        type: 3}
-      propertyPath: m_Name
-      value: Glass Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
-        type: 3}
-      propertyPath: m_TagString
-      value: Glass
-      objectReference: {fileID: 0}
-    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -95,20 +79,35 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.08752764
       objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_Name
+      value: RotateWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_TagString
+      value: RotateWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.013883919
+      value: 0.98039216
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9811321
+      value: 0.015686247
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9210711
+      value: 0.034776103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfd468cc4b0aa1c4593f470d3902616d, type: 3}

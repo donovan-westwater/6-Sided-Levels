@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
         {
             rotateMode = !rotateMode;
             //Physics.IgnoreLayerCollision(1, 0,!rotateMode);
-            this.GetComponent<CircleCollider2D>().enabled = !rotateMode;
+         //   this.GetComponent<CircleCollider2D>().enabled = !rotateMode;
         }
     }
 }
