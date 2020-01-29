@@ -28,9 +28,28 @@ public class PlayerControl : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            rotateMode = !rotateMode;
+            //CHECK BOUNDS WITH CRICLECAST (WONT DETECT COLLIDERS OF THE THE THINGS ITS STARTS INSIDE OF !!!!!)
+            //project a cicle forward in direction of rotation with circlecast, if it collides with something, have it turn on a flag
+            if(!isHoveringOverWall()) rotateMode = !rotateMode;
             //Physics.IgnoreLayerCollision(1, 0,!rotateMode);
          //   this.GetComponent<CircleCollider2D>().enabled = !rotateMode;
         }
+    }
+    //Is very computationally exspenseive, OPTIMIZE THIS! 
+    //Current issue, Walls seem to all be set to ignore collsion at the begining of the game
+    //Ethier start changing to the face system or change the way walls are checked (Use overlap area to do this!)
+    bool isHoveringOverWall()
+    {
+        if (rotateMode == false) return false;
+        Collider2D[] walls = FindObjectsOfType<Collider2D>();
+        foreach(Collider2D c in walls){
+            if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
+            if (Physics2D.GetIgnoreCollision(this.GetComponent<CircleCollider2D>(), c)) continue;
+            if(c.OverlapPoint(this.transform.position))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

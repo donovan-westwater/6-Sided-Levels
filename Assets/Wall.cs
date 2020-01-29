@@ -17,12 +17,14 @@ public class Wall : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //Currentlly all of the walls are ignoring collsion, that should not be true!
+        bool watch = Physics2D.GetIgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>()); //Only exisits to check for ignore, delete when done
         bool noHit = true;
         Vector3 dir = main.transform.position - this.transform.position;
         //Experimental (new code, may not work)
         RaycastHit ray;
         bool checkhit = Physics.Raycast(main.transform.position, -(main.transform.position - Player.transform.position), out ray,100f, Physics.DefaultRaycastLayers);
-        float zlayer = ray.point.z;
+        float zlayer = ray.point.z*0.5f; //Currently is causing the check to ignore walls by having layer be after wall
         if (!checkhit) zlayer = 0.5f;
         //End of new code
         RaycastHit2D[] rays;
