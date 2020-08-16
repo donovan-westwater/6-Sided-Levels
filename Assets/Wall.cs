@@ -18,7 +18,7 @@ public class Wall : MonoBehaviour
     void FixedUpdate()
     {
         //Currentlly all of the walls are ignoring collsion, that should not be true!
-        bool watch = Physics2D.GetIgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>()); //Only exisits to check for ignore, delete when done
+       // bool watch = Physics2D.GetIgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>()); //Only exisits to check for ignore, delete when done
         bool noHit = true;
         Vector3 dir = main.transform.position - this.transform.position;
         //Experimental (new code, may not work)

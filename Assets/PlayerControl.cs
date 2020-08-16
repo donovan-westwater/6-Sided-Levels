@@ -44,7 +44,14 @@ public class PlayerControl : MonoBehaviour
         Collider2D[] walls = FindObjectsOfType<Collider2D>();
         foreach(Collider2D c in walls){
             if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
-            if (Physics2D.GetIgnoreCollision(this.GetComponent<CircleCollider2D>(), c)) continue;
+            //if (Physics2D.GetIgnoreCollision(this.GetComponent<CircleCollider2D>(), c)) continue;
+            //Get a raycast to the cube to f [needs to be tested via running the game and breakpoint watching still!!]
+            Camera main = GameObject.Find("Main Camera").GetComponent<Camera>();
+            RaycastHit ray;
+            bool isRay;
+            isRay = Physics.Raycast(main.transform.position, -(main.transform.position - this.transform.position), out ray,100f, Physics.DefaultRaycastLayers);
+            float z = (!isRay) ? 0.5f : ray.point.z * 0.5f;
+            if (c.transform.position.z > z) continue;
             if(c.OverlapPoint(this.transform.position))
             {
                 return true;
