@@ -40,7 +40,7 @@ public class PlayerControl : MonoBehaviour
     //Ethier start changing to the face system or change the way walls are checked (Use overlap area to do this!)
     bool isHoveringOverWall()
     {
-        if (rotateMode == false) return false;
+        //if (rotateMode == false) return false;
         Collider2D[] walls = FindObjectsOfType<Collider2D>();
         foreach(Collider2D c in walls){
             if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
