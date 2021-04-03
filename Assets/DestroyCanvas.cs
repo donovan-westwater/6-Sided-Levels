@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class DestroyCanvas : MonoBehaviour
 {
+    /*public static bool TutorialIsOpen = true;*/
 
-    [SerializeField]
-    GameObject objectToDestroy;
+    public GameObject TutorialUICanvas;
+    
 
     public void DestroyGameObject()
     {
-        Destroy(objectToDestroy);
+        
+        Destroy(TutorialUICanvas);
     }
 }
