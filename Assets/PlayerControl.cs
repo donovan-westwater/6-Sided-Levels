@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public bool rotateMode = false;
+
     // Start is called before the first frame update
     void Start()
     {
