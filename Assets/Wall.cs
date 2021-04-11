@@ -32,7 +32,7 @@ public class Wall : MonoBehaviour
         RaycastHit2D[] rays;
         rays = Physics2D.RaycastAll(main.transform.position, -dir, 100f, Physics2D.DefaultRaycastLayers, -11, zlayer); //Orignally 0.5f
         Debug.DrawLine(main.transform.position, main.transform.position - dir);
-        if (this.CompareTag("RotateWall")) Debug.Log(" TEST");
+        //if (this.CompareTag("RotateWall")) Debug.Log(" TEST");
             foreach (RaycastHit2D r in rays){
             if (r.collider.gameObject.tag.Equals("Level"))
             {
@@ -42,7 +42,7 @@ public class Wall : MonoBehaviour
             {
                 Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (Player.GetComponent<PlayerControl>().rotateMode && this.CompareTag("Wall")));
                 if (this.CompareTag("PhaseWall")) Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (!Player.GetComponent<PlayerControl>().rotateMode));
-                if (this.CompareTag("RotateWall")) Debug.Log(Player.GetComponent<PlayerControl>().rotateMode && !this.CompareTag("RotateWall"));
+                //if (this.CompareTag("RotateWall")) Debug.Log(Player.GetComponent<PlayerControl>().rotateMode && !this.CompareTag("RotateWall"));
                 noHit = false;
             }
         }
