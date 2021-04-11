@@ -40,9 +40,9 @@ public class Wall : MonoBehaviour
             }
             if (r.collider == this.GetComponent<BoxCollider2D>())
             {
-                Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (Player.GetComponent<PlayerControl>().rotateMode && this.CompareTag("Wall")));
-                if (this.CompareTag("PhaseWall")) Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (!Player.GetComponent<PlayerControl>().rotateMode));
-                if (this.CompareTag("RotateWall")) Debug.Log(Player.GetComponent<PlayerControl>().rotateMode && !this.CompareTag("RotateWall"));
+                Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (Player.GetComponent<PlayerControl>().rotateMode && (this.CompareTag("Wall") || this.CompareTag("WallSwitch"))));
+                if (this.CompareTag("PhaseWall") || this.CompareTag("PhaseWallSwitch")) Physics2D.IgnoreCollision(Player.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), (!Player.GetComponent<PlayerControl>().rotateMode));
+                if (this.CompareTag("RotateWall") || this.CompareTag("RotateWallSwitch")) Debug.Log(Player.GetComponent<PlayerControl>().rotateMode && !this.CompareTag("RotateWall"));
                 noHit = false;
             }
         }

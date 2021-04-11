@@ -10,7 +10,9 @@ TagManager:
   - RotateWall
   - Glass
   - PhaseWall
-  - SwitchWall
+  - WallSwitch
+  - RotateWallSwitch
+  - PhaseWallSwitch
   layers:
   - Default
   - TransparentFX
