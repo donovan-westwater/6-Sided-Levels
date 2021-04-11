@@ -48,6 +48,8 @@ public class Switch : MonoBehaviour
                 wall.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
             }
         }
+
+        GameObject.Find("Switch").transform.Rotate(0, 0, 120.0f, Space.Self);
     }
 
 }
