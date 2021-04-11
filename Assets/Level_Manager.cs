@@ -7,7 +7,7 @@ public class Level_Manager : MonoBehaviour
 {
     //Level Manager should keep be the one keeping the stats on player, not player itself
     public static Level_Manager manager;
-    int currentLevel = 0;
+    int currentLevel = 1;
     int highestUnlockedLevel; //Dont use for now. This exists purely for making a level selecter in the future. 
                               //The level manager infomation is the stuff that is going to be used for saving
     void Awake()
