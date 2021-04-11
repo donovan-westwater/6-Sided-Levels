@@ -25,6 +25,11 @@ public class Level_Manager : MonoBehaviour
     public void nextLevel()
     {
         currentLevel += 1;
-        SceneManager.LoadScene(currentLevel);
+        if (SceneManager.GetSceneAt(currentLevel).IsValid()) SceneManager.LoadScene(currentLevel);
+        else
+        {
+            currentLevel = 1;
+            SceneManager.LoadScene(0);
+        }
     }
 }
