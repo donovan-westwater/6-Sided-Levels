@@ -79,4 +79,29 @@ public class Wall : MonoBehaviour
         Debug.Log("VISIBLE!");
     }
     */
+
+    public void ChangeWallType(int walltype)
+    {
+        switch (walltype)
+
+        {
+            case 0:
+                this.tag = "Wall";
+                this.GetComponent<SpriteRenderer>().color = Color.black;
+                break;
+            case 1:
+                this.tag = "RotateWall";
+                this.GetComponent<SpriteRenderer>().color = Color.red;
+                break;
+
+            case 2:
+                this.tag = "PhaseWall";
+                this.GetComponent<SpriteRenderer>().color = Color.black;
+                break;
+            default:
+                this.tag = "Wall";
+                this.GetComponent<SpriteRenderer>().color = Color.black;
+                break;
+        }
+    }
 }
