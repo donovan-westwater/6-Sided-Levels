@@ -33,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        MenuClickSound.click.Audio.PlayOneShot(MenuClickSound.click.MenuClick);
     }
 
     //Used for pausing the game. Timescale 0f ensures the player cannot move around
@@ -42,6 +43,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        MenuClickSound.click.Audio.PlayOneShot(MenuClickSound.click.MenuClick);
     }
     
     public void LoadMenu()
@@ -51,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         //Loads the Menu scene.
         SceneManager.LoadScene("Menu");
         Debug.Log("Loading Menu...");
+        MenuClickSound.click.Audio.PlayOneShot(MenuClickSound.click.MenuClick);
     }
 
     public void QuitGame()
