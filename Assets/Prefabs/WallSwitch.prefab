@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 180.176
       objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564221, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564221, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 19.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564222, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_Name
@@ -81,6 +91,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: WallSwitch
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 19.2
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564223, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
