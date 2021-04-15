@@ -9,6 +9,7 @@ public class MenuControl : MonoBehaviour
     public void ButtonStart()
     {
         SceneManager.LoadScene(1);
+        MenuClickSound.click.Audio.PlayOneShot(MenuClickSound.click.MenuClick);
     }
 
     public void ButtonQuit()
