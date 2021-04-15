@@ -19,7 +19,6 @@ public class Levelrotater : MonoBehaviour
         {
             transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * 20f * Time.deltaTime, Space.World);
             transform.Rotate(Vector3.right * Input.GetAxis("Vertical") * 20f * Time.deltaTime, Space.World);
-            
         }
     }
 }
