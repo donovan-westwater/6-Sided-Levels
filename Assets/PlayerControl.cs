@@ -23,6 +23,7 @@ public class PlayerControl : MonoBehaviour
                 //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
                 Vector3 facing = gameObject.transform.GetChild(0).gameObject.transform.position;
                 gameObject.transform.GetChild(0).gameObject.transform.RotateAround(transform.position, Vector3.forward, Vector2.Angle(facing - transform.position, movement)*0.05f);
+                
             }
             transform.position += movement;
         }
@@ -40,7 +41,7 @@ public class PlayerControl : MonoBehaviour
     //Ethier start changing to the face system or change the way walls are checked (Use overlap area to do this!)
     bool isHoveringOverWall()
     {
-        if (rotateMode == false) return false;
+        //if (rotateMode == false) return false;
         Collider2D[] walls = FindObjectsOfType<Collider2D>();
         foreach(Collider2D c in walls){
             if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
@@ -52,6 +53,7 @@ public class PlayerControl : MonoBehaviour
             isRay = Physics.Raycast(main.transform.position, -(main.transform.position - this.transform.position), out ray,100f, Physics.DefaultRaycastLayers);
             float z = (!isRay) ? 0.5f : ray.point.z * 0.5f;
             if (c.transform.position.z > z) continue;
+
             if(c.OverlapPoint(this.transform.position))
             {
                 return true;
