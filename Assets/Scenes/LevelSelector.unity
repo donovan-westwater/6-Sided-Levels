@@ -322,7 +322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &152322006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -568,7 +568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 475981719}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 986573552}
+        m_TargetAssemblyTypeName: LevelSelectorControl, Assembly-CSharp
+        m_MethodName: MoveLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &475981719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1079,6 +1091,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 986573551}
+  - component: {fileID: 986573552}
   m_Layer: 0
   m_Name: LevelSelectManager
   m_TagString: Untagged
@@ -1100,6 +1113,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986573552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986573550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de7d9b87e6a3484ba5bcdfa0bf58e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftLevelVisible: {fileID: 436408187}
+  leftLevel: {fileID: 152322005}
+  centerLevel: {fileID: 1242574694}
+  rightLevel: {fileID: 110372286}
+  level1Img: {fileID: 21300000, guid: 8eb9fcc4cb586eb479387991c95bf82d, type: 3}
+  level2Img: {fileID: 21300000, guid: f700544590bedcd40bf08fa38dcdbd05, type: 3}
+  levelTextLeft: {fileID: 1405403783}
+  levelTextCenter: {fileID: 930154592}
+  levelTextRight: {fileID: 1699534869}
 --- !u!1 &1241945783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1383,7 +1417,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1381554585}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 986573552}
+        m_TargetAssemblyTypeName: LevelSelectorControl, Assembly-CSharp
+        m_MethodName: MoveRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1381554585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1440,7 +1486,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1405403781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1973,7 +2019,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1756788218}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 986573552}
+        m_TargetAssemblyTypeName: LevelSelectorControl, Assembly-CSharp
+        m_MethodName: PlaySelectedLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1756788218
 MonoBehaviour:
   m_ObjectHideFlags: 0
