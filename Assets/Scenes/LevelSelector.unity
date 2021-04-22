@@ -246,11 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1129,8 +1129,11 @@ MonoBehaviour:
   leftLevel: {fileID: 152322005}
   centerLevel: {fileID: 1242574694}
   rightLevel: {fileID: 110372286}
-  level1Img: {fileID: 21300000, guid: 8eb9fcc4cb586eb479387991c95bf82d, type: 3}
-  level2Img: {fileID: 21300000, guid: f700544590bedcd40bf08fa38dcdbd05, type: 3}
+  level1Img: {fileID: 21300000, guid: 3f03803ab1c7baa4d9c04a41b15deb5f, type: 3}
+  level2Img: {fileID: 21300000, guid: c85088d7b0f23294cb9f345cfea94fe3, type: 3}
+  level3Img: {fileID: 21300000, guid: 3db99f165e4b2564ea08e4d3883e68f0, type: 3}
+  level4Img: {fileID: 21300000, guid: 579ffa30e3e102740935c3cdbb80f72e, type: 3}
+  level5Img: {fileID: 21300000, guid: 7455d79045a49704aad84adf6d531a0d, type: 3}
   levelTextLeft: {fileID: 1405403783}
   levelTextCenter: {fileID: 930154592}
   levelTextRight: {fileID: 1699534869}
@@ -1680,10 +1683,10 @@ RectTransform:
   m_Father: {fileID: 139218009}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -462.59088, y: -221.12}
-  m_SizeDelta: {x: 171.8337, y: 39.9404}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 125, y: 39}
+  m_SizeDelta: {x: 171.83368, y: 39.9404}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493702119
 MonoBehaviour:
@@ -1728,7 +1731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1493702120}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 986573552}
+        m_TargetAssemblyTypeName: LevelSelectorControl, Assembly-CSharp
+        m_MethodName: returnToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1493702120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,10 +1814,10 @@ RectTransform:
   m_Father: {fileID: 139218009}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -8.098389, y: -46}
-  m_SizeDelta: {x: -788.91, y: -203.6958}
+  m_SizeDelta: {x: 315.09003, y: 288.3042}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668677436
 MonoBehaviour:

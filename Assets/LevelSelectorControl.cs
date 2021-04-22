@@ -23,6 +23,16 @@ public class LevelSelectorControl : MonoBehaviour
 
     public Sprite level2Img;
 
+    public Sprite level3Img;
+
+    public Sprite level4Img;
+
+    public Sprite level5Img;
+
+    //public Sprite level6Img; These two are commented out until level 6 and 7 are added.
+
+    //public Sprite level7Img;
+
     //Next three lines are used for modifying the "Level 1,2,3, etc." text on the left, right, and center text boxes.
     
     public Text levelTextLeft;
@@ -52,8 +62,38 @@ public class LevelSelectorControl : MonoBehaviour
             levelTextLeft.text = "Level 1";
             centerLevel.GetComponent<Image>().sprite = level2Img;
             levelTextCenter.text = "Level 2";
-            rightLevel.GetComponent<Image>().sprite = level2Img;
+            rightLevel.GetComponent<Image>().sprite = level3Img;
             levelTextRight.text = "Level 3";
+        }
+        else if (SelectedLevel == 3)
+        {
+            leftLevelVisible.SetActive(true);
+            leftLevel.GetComponent<Image>().sprite = level2Img;
+            levelTextLeft.text = "Level 2";
+            centerLevel.GetComponent<Image>().sprite = level3Img;
+            levelTextCenter.text = "Level 3";
+            rightLevel.GetComponent<Image>().sprite = level4Img;
+            levelTextRight.text = "Level 4";
+        }
+        else if (SelectedLevel == 4)
+        {
+            leftLevelVisible.SetActive(true);
+            leftLevel.GetComponent<Image>().sprite = level3Img;
+            levelTextLeft.text = "Level 3";
+            centerLevel.GetComponent<Image>().sprite = level4Img;
+            levelTextCenter.text = "Level 4";
+            rightLevel.GetComponent<Image>().sprite = level5Img;
+            levelTextRight.text = "Level 5";
+        }
+        else if (SelectedLevel == 5)
+        {
+            leftLevelVisible.SetActive(true);
+            leftLevel.GetComponent<Image>().sprite = level4Img;
+            levelTextLeft.text = "Level 4";
+            centerLevel.GetComponent<Image>().sprite = level5Img;
+            levelTextCenter.text = "Level 5";
+            rightLevel.GetComponent<Image>().sprite = level5Img;
+            levelTextRight.text = "Level 6";
         }
     }
 
@@ -102,22 +142,22 @@ public class LevelSelectorControl : MonoBehaviour
         }
         else if (SelectedLevel == 3)
         {
-            //SceneManager.LoadScene("Level 3"); To Be Updated with once more level scenes are available.
+            SceneManager.LoadScene("Level 3");
             Debug.Log("Loading Level 3");
         }
         else if (SelectedLevel == 4)
         {
-            //SceneManager.LoadScene("Level 4");
+            SceneManager.LoadScene("Level 4");
             Debug.Log("Loading Level 4");
         }
         else if (SelectedLevel == 5)
         {
-            //SceneManager.LoadScene("Level 5");
+            SceneManager.LoadScene("Level 5");
             Debug.Log("Loading Level 5");
         }
         else if (SelectedLevel == 6)
         {
-            //SceneManager.LoadScene("Level 6");
+            //SceneManager.LoadScene("Level 6");     To Be Updated with once more level scenes are available.
             Debug.Log("Loading Level 6");
         }
         else
@@ -125,5 +165,12 @@ public class LevelSelectorControl : MonoBehaviour
             //SceneManager.LoadScene("Level 7");
             Debug.Log("Loading Level 7");
         }
+    }
+
+    //Used for return to main menu button.
+    public void returnToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        Debug.Log("Returning to Main Menu.");
     }
 }
