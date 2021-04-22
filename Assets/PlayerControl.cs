@@ -21,8 +21,8 @@ public class PlayerControl : MonoBehaviour
             {
                 float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
                 //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
-                Vector3 facing = gameObject.transform.GetChild(0).gameObject.transform.position;
-                gameObject.transform.GetChild(0).gameObject.transform.RotateAround(transform.position, Vector3.forward, Vector2.Angle(facing - transform.position, movement)*0.05f);
+                //Vector3 facing = gameObject.transform.GetChild(0).gameObject.transform.position;
+                //gameObject.transform.GetChild(0).gameObject.transform.RotateAround(transform.position, Vector3.forward, Vector2.Angle(facing - transform.position, movement)*0.05f);
                 
             }
             transform.position += movement;
