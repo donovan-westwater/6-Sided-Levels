@@ -10,6 +10,8 @@ public class LevelSelectorControl : MonoBehaviour
     //Since there is no level 0 there should be not a preview to the left of level 1.
     public  GameObject leftLevelVisible;
 
+    public GameObject rightLevelVisible; //Used the same as above but for last level visibility.
+
     //leftLevel: Used to determine what game object is on the left side of the level select UI
     public GameObject leftLevel;
 
@@ -29,9 +31,9 @@ public class LevelSelectorControl : MonoBehaviour
 
     public Sprite level5Img;
 
-    //public Sprite level6Img; These two are commented out until level 6 and 7 are added.
+    public Sprite level6Img;
 
-    //public Sprite level7Img;
+    public Sprite level7Img;
 
     //Next three lines are used for modifying the "Level 1,2,3, etc." text on the left, right, and center text boxes.
     
@@ -50,6 +52,7 @@ public class LevelSelectorControl : MonoBehaviour
         if (SelectedLevel == 1) 
         {
             leftLevelVisible.SetActive(false);
+            rightLevelVisible.SetActive(true);
             centerLevel.GetComponent<Image>().sprite = level1Img;
             levelTextCenter.text = "Level 1";
             rightLevel.GetComponent<Image>().sprite = level2Img;
@@ -58,6 +61,7 @@ public class LevelSelectorControl : MonoBehaviour
         else if (SelectedLevel == 2)
         {
             leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(true);
             leftLevel.GetComponent<Image>().sprite = level1Img;
             levelTextLeft.text = "Level 1";
             centerLevel.GetComponent<Image>().sprite = level2Img;
@@ -68,6 +72,7 @@ public class LevelSelectorControl : MonoBehaviour
         else if (SelectedLevel == 3)
         {
             leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(true);
             leftLevel.GetComponent<Image>().sprite = level2Img;
             levelTextLeft.text = "Level 2";
             centerLevel.GetComponent<Image>().sprite = level3Img;
@@ -78,6 +83,7 @@ public class LevelSelectorControl : MonoBehaviour
         else if (SelectedLevel == 4)
         {
             leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(true);
             leftLevel.GetComponent<Image>().sprite = level3Img;
             levelTextLeft.text = "Level 3";
             centerLevel.GetComponent<Image>().sprite = level4Img;
@@ -88,12 +94,33 @@ public class LevelSelectorControl : MonoBehaviour
         else if (SelectedLevel == 5)
         {
             leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(true);
             leftLevel.GetComponent<Image>().sprite = level4Img;
             levelTextLeft.text = "Level 4";
             centerLevel.GetComponent<Image>().sprite = level5Img;
             levelTextCenter.text = "Level 5";
             rightLevel.GetComponent<Image>().sprite = level5Img;
             levelTextRight.text = "Level 6";
+        }
+        else if (SelectedLevel == 6)
+        {
+            leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(true);
+            leftLevel.GetComponent<Image>().sprite = level5Img;
+            levelTextLeft.text = "Level 5";
+            centerLevel.GetComponent<Image>().sprite = level6Img;
+            levelTextCenter.text = "Level 6";
+            rightLevel.GetComponent<Image>().sprite = level7Img;
+            levelTextRight.text = "Level 7";
+        }
+        else if (SelectedLevel == 7)
+        {
+            leftLevelVisible.SetActive(true);
+            rightLevelVisible.SetActive(false);
+            leftLevel.GetComponent<Image>().sprite = level6Img;
+            levelTextLeft.text = "Level 6";
+            centerLevel.GetComponent<Image>().sprite = level7Img;
+            levelTextCenter.text = "Level 7";
         }
     }
 
@@ -157,12 +184,12 @@ public class LevelSelectorControl : MonoBehaviour
         }
         else if (SelectedLevel == 6)
         {
-            //SceneManager.LoadScene("Level 6");     To Be Updated with once more level scenes are available.
+            SceneManager.LoadScene("Level 6");
             Debug.Log("Loading Level 6");
         }
         else
         {
-            //SceneManager.LoadScene("Level 7");
+            SceneManager.LoadScene("Level 7");
             Debug.Log("Loading Level 7");
         }
     }

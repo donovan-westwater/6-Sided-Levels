@@ -1126,6 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftLevelVisible: {fileID: 436408187}
+  rightLevelVisible: {fileID: 606041209}
   leftLevel: {fileID: 152322005}
   centerLevel: {fileID: 1242574694}
   rightLevel: {fileID: 110372286}
@@ -1134,6 +1135,8 @@ MonoBehaviour:
   level3Img: {fileID: 21300000, guid: 3db99f165e4b2564ea08e4d3883e68f0, type: 3}
   level4Img: {fileID: 21300000, guid: 579ffa30e3e102740935c3cdbb80f72e, type: 3}
   level5Img: {fileID: 21300000, guid: 7455d79045a49704aad84adf6d531a0d, type: 3}
+  level6Img: {fileID: 21300000, guid: 5d728495e7b9b0c4d9e860dccd7d890d, type: 3}
+  level7Img: {fileID: 21300000, guid: 7e4ecf16c12c58342a3dd1ce0e716f86, type: 3}
   levelTextLeft: {fileID: 1405403783}
   levelTextCenter: {fileID: 930154592}
   levelTextRight: {fileID: 1699534869}
