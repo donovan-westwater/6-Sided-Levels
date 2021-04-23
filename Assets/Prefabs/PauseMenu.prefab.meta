@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/SwitchWall.prefab.meta
+guid: 9af3d672b49ad284580cba23eedf94df
+=======
 guid: 4e06e570a56ee7a4c9ce77fab226c10e
+>>>>>>> 3b838ccb507ed83ab15f19371cc421cf7ed6bc3e:Assets/Prefabs/PauseMenu.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
