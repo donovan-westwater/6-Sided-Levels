@@ -98,6 +98,23 @@ public class Wall : MonoBehaviour
                 this.tag = "PhaseWall";
                 this.GetComponent<SpriteRenderer>().color = Color.black;
                 break;
+            case 3:
+                this.tag = "WallSwitch";
+                this.GetComponent<SpriteRenderer>().color = new Color(0.2f, 0.2f, 0.2f, 1);
+                break;
+            case 4:
+                this.tag = "RotateWallSwitch";
+                this.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
+                break;
+
+            case 5:
+                this.tag = "PhaseWallSwitch";
+                this.GetComponent<SpriteRenderer>().color = new Color (0, 1, 0, 1);
+                break;
+
+
+
+
             default:
                 this.tag = "Wall";
                 this.GetComponent<SpriteRenderer>().color = Color.black;

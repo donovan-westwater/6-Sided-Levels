@@ -4,7 +4,7 @@ using UnityEditor;
 [CustomEditor(typeof(Wall))]
 public class WallEditor : Editor
 {
-    private string[] wallOptions = { "Wall", "RotateWall", "PhaseWall" };
+    private string[] wallOptions = { "Wall", "RotateWall", "PhaseWall","WallSwitch","RotateWallSwitch","PhaseWallSwitch" };
     private int index;
     public override void OnInspectorGUI()
     {
