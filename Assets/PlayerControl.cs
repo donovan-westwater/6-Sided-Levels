@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour
                     {
                         gameover = true;
                         Debug.Log("Game Over Condition");
-                        manager.GetComponent<Level_Manager>().nextLevel();
+                        manager.GetComponent<Level_Manager>().restartLevel();
                     } 
                 }
             }
