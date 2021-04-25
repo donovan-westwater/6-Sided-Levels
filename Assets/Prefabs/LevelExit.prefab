@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2405345307592634848}
   - component: {fileID: 2405345307592634849}
   - component: {fileID: 2405345307592634878}
-  - component: {fileID: 2136681240613677536}
+  - component: {fileID: -7676318129087364063}
   m_Layer: 0
   m_Name: LevelExit
   m_TagString: Untagged
@@ -48,6 +48,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -99,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5.6
---- !u!114 &2136681240613677536
+--- !u!114 &-7676318129087364063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,6 +109,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2405345307592634850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f58a6e9ff4ceab24b90199a5db4d8cd6, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ed6b2dcedb84654f8eef2857c525ec6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+  player: {fileID: 0}

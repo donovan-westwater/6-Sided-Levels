@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public GameObject manager;
+    public Collider2D[] walls;
     public bool rotateMode = false;
     public bool gameover;
-    public Collider2D[] walls;
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        gameover = false;
+        manager = GameObject.Find("Level Manager");
         walls = FindObjectsOfType<Collider2D>();
+        gameover = false;
     }
 
     // Update is called once per frame
@@ -65,6 +67,7 @@ public class PlayerControl : MonoBehaviour
                     {
                         gameover = true;
                         Debug.Log("Game Over Condition");
+                        manager.GetComponent<Level_Manager>().nextLevel();
                     } 
                 }
             }
