@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public GameObject manager;
-    public Collider2D[] walls;
     public bool rotateMode = false;
     public bool gameover;
 
@@ -13,7 +12,6 @@ public class PlayerControl : MonoBehaviour
     void Start()
     {
         manager = GameObject.Find("Level Manager");
-        walls = FindObjectsOfType<Collider2D>();
         gameover = false;
     }
 
@@ -45,33 +43,34 @@ public class PlayerControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Need optimization
-        if (rotateMode == true)
+        // Check if the player is still on the cube
+        RaycastHit checkCube;
+        bool isOnCube = Physics.Raycast(this.transform.position, Vector3.forward, out checkCube, 100f, Physics.DefaultRaycastLayers);
+        //Debug.Log(isOnCube);
+        if (isOnCube == false)
         {
-            // We need to check in case we FORCEFULLY rotate over a wall that we're not suposed to (RotateWalls, PhaseWalls, etc.)
-            foreach (Collider2D c in walls)
-            {
-                if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
-
-                // Needs tuning - Sometimes going over a wall isn't detected when it should be.
-                Camera main = GameObject.Find("Main Camera").GetComponent<Camera>();
-                RaycastHit ray;
-                bool isRay;
-                isRay = Physics.Raycast(main.transform.position, -(main.transform.position - this.transform.position), out ray, 100f, Physics.DefaultRaycastLayers);
-                float z = (!isRay) ? 0.5f : ray.point.z * 0.5f;
-                if (c.transform.position.z > z) continue;
-
-                if (c.OverlapPoint(this.transform.position))
-                {
-                    if ((c.gameObject.tag.Equals("RotateWall") || c.gameObject.tag.Equals("RotateWallSwitch") || c.gameObject.tag.Equals("PhaseWall") || c.gameObject.tag.Equals("PhaseWallSwitch")) && gameover == false)
-                    {
-                        gameover = true;
-                        Debug.Log("Game Over Condition");
-                        manager.GetComponent<Level_Manager>().restartLevel();
-                    } 
-                }
-            }
+            doGameOver();
         }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // Check for collision squishing!
+        ContactPoint2D contact = collision.GetContact(0);
+        float dist = contact.separation;
+        //Debug.Log("Contact point count: " + collision.contactCount);
+        //Debug.Log("Contact point dist: " + dist);
+        if (dist < -0.2 && gameover == false)
+        {
+            doGameOver();
+        }
+    }
+
+    void doGameOver()
+    {
+        gameover = true;
+        Debug.Log("Game Over");
+        manager.GetComponent<Level_Manager>().restartLevel();
     }
 
     //Is very computationally exspenseive, OPTIMIZE THIS! 
@@ -80,7 +79,7 @@ public class PlayerControl : MonoBehaviour
     bool isHoveringOverWall()
     {
         //if (rotateMode == false) return false;
-        walls = FindObjectsOfType<Collider2D>();
+        Collider2D[] walls = FindObjectsOfType<Collider2D>();
         foreach (Collider2D c in walls)
         {
             if (c.Equals(this.GetComponent<CircleCollider2D>())) continue;
@@ -100,14 +99,4 @@ public class PlayerControl : MonoBehaviour
         }
         return false;
     }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        ContactPoint2D contact = collision.GetContact(0);
-        float dist = contact.separation;
-        Debug.Log("Contact point count: "+collision.contactCount);
-        Debug.Log("Contact point dist: " + dist);
-        if (dist < -0.2) manager.GetComponent<Level_Manager>().restartLevel();
-    }
 }
-
-    
