@@ -8,7 +8,7 @@ public class PlayerControl : MonoBehaviour
     public Collider2D[] walls;
     public bool rotateMode = false;
     public bool gameover;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,14 +22,14 @@ public class PlayerControl : MonoBehaviour
     {
         if (rotateMode == false)
         {
-            Vector3 movement = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime, Input.GetAxis("Vertical") * Time.deltaTime,0);
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal") * Time.deltaTime, Input.GetAxis("Vertical") * Time.deltaTime, 0);
             if (movement != Vector3.zero)
             {
                 float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg;
                 //transform.rotation = Quaternion.AngleAxis(angle, Vector3.back);
                 //Vector3 facing = gameObject.transform.GetChild(0).gameObject.transform.position;
                 //gameObject.transform.GetChild(0).gameObject.transform.RotateAround(transform.position, Vector3.forward, Vector2.Angle(facing - transform.position, movement)*0.05f);
-                
+
             }
             transform.position += movement;
         }
@@ -37,7 +37,7 @@ public class PlayerControl : MonoBehaviour
         {
             //CHECK BOUNDS WITH CRICLECAST (WONT DETECT COLLIDERS OF THE THE THINGS ITS STARTS INSIDE OF !!!!!)
             //project a cicle forward in direction of rotation with circlecast, if it collides with something, have it turn on a flag
-            if(!isHoveringOverWall()) rotateMode = !rotateMode;
+            if (!isHoveringOverWall()) rotateMode = !rotateMode;
             //Physics.IgnoreLayerCollision(1, 0,!rotateMode);
             //this.GetComponent<CircleCollider2D>().enabled = !rotateMode;
         }
@@ -60,15 +60,15 @@ public class PlayerControl : MonoBehaviour
                 isRay = Physics.Raycast(main.transform.position, -(main.transform.position - this.transform.position), out ray, 100f, Physics.DefaultRaycastLayers);
                 float z = (!isRay) ? 0.5f : ray.point.z * 0.5f;
                 if (c.transform.position.z > z) continue;
-                   
+
                 if (c.OverlapPoint(this.transform.position))
                 {
                     if ((c.gameObject.tag.Equals("RotateWall") || c.gameObject.tag.Equals("RotateWallSwitch") || c.gameObject.tag.Equals("PhaseWall") || c.gameObject.tag.Equals("PhaseWallSwitch")) && gameover == false)
                     {
                         gameover = true;
                         Debug.Log("Game Over Condition");
-                        manager.GetComponent<Level_Manager>().nextLevel();
-                    } 
+                        //manager.GetComponent<Level_Manager>().nextLevel();
+                    }
                 }
             }
         }
@@ -100,4 +100,14 @@ public class PlayerControl : MonoBehaviour
         }
         return false;
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        ContactPoint2D contact = collision.GetContact(0);
+        float dist = contact.separation;
+        Debug.Log("Contact point count: "+collision.contactCount);
+        Debug.Log("Contact point dist: " + dist);
+        if (dist < -0.2) manager.GetComponent<Level_Manager>().restartLevel();
+    }
 }
+
+    
