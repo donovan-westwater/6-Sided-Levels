@@ -36,8 +36,10 @@ public class LevelExit : MonoBehaviour
             {
                 break;
             }
-            if (r.collider == this.GetComponent<BoxCollider2D>())
+            if (r.collider == this.GetComponent<CircleCollider2D>())
             {
+                //Debug.Log(Physics2D.GetIgnoreCollision(player.GetComponent<CircleCollider2D>(), this.GetComponent<CircleCollider2D>()));
+                //Debug.Log("Can exit");
                 Physics2D.IgnoreCollision(player.GetComponent<CircleCollider2D>(), this.GetComponent<CircleCollider2D>(), player.GetComponent<PlayerControl>().rotateMode);
                 noHit = false;
             }
