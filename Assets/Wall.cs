@@ -79,7 +79,7 @@ public class Wall : MonoBehaviour
         Debug.Log("VISIBLE!");
     }
     */
-
+    //TODO: Add sprite changes for switch walls and normal walls
     public void ChangeWallType(int walltype)
     {
         switch (walltype)
