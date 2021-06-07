@@ -4,14 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - RotateWall
   - Wall
   - Level
-  - RotateWall
+  - PhaseWall
+  - Switch
   - RotateWallSwitch
   - WallSwitch
   - PhaseWallSwitch
-  - PhaseWall
-  - Switch
   layers:
   - Default
   - TransparentFX

@@ -157,6 +157,8 @@ public class LevelSelectorControl : MonoBehaviour
     //PlaySelectLevel: Used for the play button.
     public void PlaySelectedLevel()
     {
+        GameObject lvl = GameObject.Find("Level Manager");
+        lvl.GetComponent<Level_Manager>().setLevel(SelectedLevel+1);
         if (SelectedLevel == 1)
         {
             SceneManager.LoadScene("Level 1");

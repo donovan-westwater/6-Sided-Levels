@@ -62,8 +62,11 @@ public class Wall : MonoBehaviour
         }
         */
     }
-            
-    
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Player.GetComponent<PlayerControl>().rotateMode) Debug.Log(this.gameObject.name);
+    }
     /*
     // Disable the behaviour when it becomes invisible...
     void OnBecameInvisible()

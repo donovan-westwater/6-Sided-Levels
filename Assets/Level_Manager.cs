@@ -7,7 +7,7 @@ public class Level_Manager : MonoBehaviour
 {
     //Level Manager should keep be the one keeping the stats on player, not player itself
     public static Level_Manager manager;
-    int currentLevel = 1;
+    int currentLevel = 2;
     int highestUnlockedLevel; //Dont use for now. This exists purely for making a level selecter in the future. 
                               //The level manager infomation is the stuff that is going to be used for saving
     void Awake()
@@ -31,6 +31,10 @@ public class Level_Manager : MonoBehaviour
             currentLevel = 1;
             SceneManager.LoadScene(0);
         }
+    }
+    public void setLevel(int lvl)
+    {
+        currentLevel = lvl;
     }
     public void restartLevel()
     {

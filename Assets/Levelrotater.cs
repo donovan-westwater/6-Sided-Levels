@@ -18,7 +18,7 @@ public class Levelrotater : MonoBehaviour
         if (player.GetComponent<PlayerControl>().rotateMode)
         {
             transform.Rotate(Vector3.up * Input.GetAxis("Horizontal") * 20f * Time.deltaTime, Space.World);
-            transform.Rotate(Vector3.right * Input.GetAxis("Vertical") * 20f * Time.deltaTime, Space.World);
+            transform.Rotate(Vector3.left * Input.GetAxis("Vertical") * 20f * Time.deltaTime, Space.World);
         }
     }
 }

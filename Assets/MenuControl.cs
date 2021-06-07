@@ -14,7 +14,7 @@ public class MenuControl : MonoBehaviour
 
     public void ButtonLevelSelect()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         MenuClickSound.click.Audio.PlayOneShot(MenuClickSound.click.MenuClick);
     }
 
